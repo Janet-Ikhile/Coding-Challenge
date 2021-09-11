@@ -35,17 +35,15 @@ public class StringChallenge {
     }
 
     public boolean isPalindrome(String word) {
-        String reversedWord = "";
+        StringBuilder reversedWord = new StringBuilder();
         char letter;
         int wordLength = word.length();
 
         for (int i = wordLength - 1; i >= 0; i--) {
             letter = word.charAt(i);
-            reversedWord += letter;
+            reversedWord.append(letter);
         }
 
-        if (word.equals(reversedWord))
-            return true;
-        else return false;
+        return word.equals(reversedWord.toString());
     }
 }
