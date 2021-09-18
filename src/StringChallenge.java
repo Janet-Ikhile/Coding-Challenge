@@ -34,7 +34,10 @@ public class StringChallenge {
         return true;
     }
 
-    public boolean isPalindrome(String word) {
+    public Boolean isPalindrome(String word) {
+        if (word==null){
+            return null;
+        }
         StringBuilder reversedWord = new StringBuilder();
         char letter;
         int wordLength = word.length();

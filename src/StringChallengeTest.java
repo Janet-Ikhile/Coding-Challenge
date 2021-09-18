@@ -21,7 +21,7 @@ public class StringChallengeTest {
 
     }
     @Test
-    public void palindromeTest(){
+    public void palindromeTest_NormalTest(){
 
         StringChallenge challenge=new StringChallenge();
 
@@ -39,4 +39,14 @@ public class StringChallengeTest {
         assertTrue(challenge.isPalindrome("ada"));
         assertFalse(challenge.isPalindrome("adaze"));
     }
+
+    @Test
+    public void palindromeTest_EdgeCase(){
+
+        StringChallenge challenge=new StringChallenge();
+        assertTrue(challenge.isPalindrome(""));
+        assertNull(challenge.isPalindrome(null));
+
+    }
+
 }
