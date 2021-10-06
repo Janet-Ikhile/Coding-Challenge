@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class StringChallenge {
@@ -35,7 +36,7 @@ public class StringChallenge {
     }
 
     public Boolean isPalindrome(String word) {
-        if (word==null){
+        if (word == null) {
             return null;
         }
         StringBuilder reversedWord = new StringBuilder();
@@ -49,4 +50,25 @@ public class StringChallenge {
 
         return word.equals(reversedWord.toString());
     }
+
+    public char firstUniqueCharacter(String word) {
+        HashMap<Character, Integer> characterCount = new HashMap<>();
+        for (char c : word.toCharArray()) {
+            if (!characterCount.containsKey(c))
+                characterCount.put(c, 1);
+            else {
+                int count = characterCount.get(c);
+                count++;
+
+                characterCount.put(c, count);
+            }
+        }
+
+        for (char c:word.toCharArray()) {
+            int count=characterCount.get(c);
+            if (count==1) return c;
+        }
+        return '-';
+    }
+
 }
