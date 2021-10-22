@@ -1,12 +1,18 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringChallengeTest {
+    private StringChallenge challenge;
+
+    @Before
+    public void init() {
+        challenge = new StringChallenge();
+    }
+
     @Test
     public void uniqueTest() {
-        StringChallenge challenge = new StringChallenge();
-
         assertTrue(challenge.isUnique("phone"));
         assertTrue(challenge.isUnique("fisher"));
         assertFalse(challenge.isUnique("unique"));
@@ -23,9 +29,6 @@ public class StringChallengeTest {
 
     @Test
     public void palindromeTest_NormalTest() {
-
-        StringChallenge challenge = new StringChallenge();
-
         assertTrue(challenge.isPalindrome("madam"));
         assertFalse(challenge.isPalindrome("car"));
         assertTrue(challenge.isPalindrome("apapa"));
@@ -43,8 +46,6 @@ public class StringChallengeTest {
 
     @Test
     public void palindromeTest_EdgeCase() {
-
-        StringChallenge challenge = new StringChallenge();
         assertTrue(challenge.isPalindrome(""));
         assertNull(challenge.isPalindrome(null));
 
@@ -52,7 +53,6 @@ public class StringChallengeTest {
 
     @Test
     public void firstUniqueCharacterTest() {
-        StringChallenge challenge= new StringChallenge();
         assertEquals('m', challenge.firstUniqueCharacter("emeka"));
         assertEquals('j', challenge.firstUniqueCharacter("janet"));
         assertEquals('p', challenge.firstUniqueCharacter("p"));
@@ -66,6 +66,21 @@ public class StringChallengeTest {
         assertEquals('-', challenge.firstUniqueCharacter("111mmmnnnssdffeed"));
         assertEquals('-', challenge.firstUniqueCharacter("howareyouhowareyouhowareyou"));
         assertEquals('-', challenge.firstUniqueCharacter("jessjess"));
-        assertEquals('-', challenge.firstUniqueCharacter(" "));
+
+    }
+
+    @Test
+    public void getYoutubeIDTest() {
+        assertEquals("mi4pEsYeljk", challenge.getVideoId("https://www.youtube.com/watch?v=mi4pEsYeljk"));
+        assertEquals("rt-2cxAiPJk", challenge.getVideoId("https://www.youtube.com/watch?v=rt-2cxAiPJk"));
+        assertEquals("eK7l2SOkp3g", challenge.getVideoId("https://www.youtube.com/watch?v=eK7l2SOkp3g"));
+        assertEquals("oUjaljMMy2M", challenge.getVideoId("https://youtu.be/oUjaljMMy2M"));
+    }
+    @Test
+    public void getYoutubeIDTest2() {
+        assertEquals("mi4pEsYeljk", challenge.getVideoId2("https://www.youtube.com/watch?v=mi4pEsYeljk"));
+        assertEquals("rt-2cxAiPJk", challenge.getVideoId2("https://www.youtube.com/watch?v=rt-2cxAiPJk"));
+        assertEquals("eK7l2SOkp3g", challenge.getVideoId2("https://www.youtube.com/watch?v=eK7l2SOkp3g"));
+        assertEquals("oUjaljMMy2M", challenge.getVideoId2("https://youtu.be/oUjaljMMy2M"));
     }
 }

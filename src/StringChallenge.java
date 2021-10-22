@@ -64,11 +64,28 @@ public class StringChallenge {
             }
         }
 
-        for (char c:word.toCharArray()) {
-            int count=characterCount.get(c);
-            if (count==1) return c;
+        for (char c : word.toCharArray()) {
+            int count = characterCount.get(c);
+            if (count == 1) return c;
         }
         return '-';
     }
 
+    public String getVideoId(String videoLink) {
+        String link[] = videoLink.split("=");
+        if (videoLink.startsWith("https://www.youtube.com")) {
+            link = videoLink.split("=");
+            return link[1];
+        } else if (videoLink.startsWith("https://youtu.be"))
+            link = videoLink.split("be/");
+        return link[1];
+    }
+
+    public String getVideoId2(String videoLink) {
+        int videoLength = videoLink.length();
+        int beginIndex = videoLength - 11;
+        String link = videoLink.substring(beginIndex);
+        return link;
+
+    }
 }
