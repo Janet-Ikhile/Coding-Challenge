@@ -76,6 +76,7 @@ public class StringChallengeTest {
         assertEquals("eK7l2SOkp3g", challenge.getVideoId("https://www.youtube.com/watch?v=eK7l2SOkp3g"));
         assertEquals("oUjaljMMy2M", challenge.getVideoId("https://youtu.be/oUjaljMMy2M"));
     }
+
     @Test
     public void getYoutubeIDTest2() {
         assertEquals("mi4pEsYeljk", challenge.getVideoId2("https://www.youtube.com/watch?v=mi4pEsYeljk"));
