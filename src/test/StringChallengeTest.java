@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -84,4 +85,20 @@ public class StringChallengeTest {
         assertEquals("eK7l2SOkp3g", challenge.getVideoId2("https://www.youtube.com/watch?v=eK7l2SOkp3g"));
         assertEquals("oUjaljMMy2M", challenge.getVideoId2("https://youtu.be/oUjaljMMy2M"));
     }
+
+//    @Test
+//    public void  getPermutePalindrome(){
+//        assertTrue(challenge.canPermutePalindrome("carrace"));
+//        assertTrue(challenge.canPermutePalindrome("add"));
+//        assertTrue(challenge.canPermutePalindrome("fee"));
+//        assertTrue(challenge.canPermutePalindrome("apaap"));
+//        assertTrue(challenge.canPermutePalindrome("jessjess"));
+//        assertTrue(challenge.canPermutePalindrome("saisivippuakkauppia"));
+//        assertTrue(challenge.canPermutePalindrome("madam"));
+//        assertFalse(challenge.canPermutePalindrome("book"));
+//        assertFalse(challenge.canPermutePalindrome("now"));
+//        assertFalse(challenge.canPermutePalindrome("laptop"));
+//        assertFalse(challenge.canPermutePalindrome("switch"));
+//        assertFalse(challenge.canPermutePalindrome("process"));
+//    }
 }

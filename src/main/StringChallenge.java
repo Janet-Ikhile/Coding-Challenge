@@ -84,8 +84,12 @@ public class StringChallenge {
     public String getVideoId2(String videoLink) {
         int videoLength = videoLink.length();
         int beginIndex = videoLength - 11;
-        String link = videoLink.substring(beginIndex);
-        return link;
+        String videoID = videoLink.substring(beginIndex);
+        return videoID;
 
+    }
+
+    public boolean canPermutePalindrome(String word){
+     return true;
     }
 }
